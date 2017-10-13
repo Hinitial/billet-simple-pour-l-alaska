@@ -1,5 +1,5 @@
-<?php include('Elements/head.php'); ?>
-<?php include('Elements/nav.php'); ?>
+<?php include('Vue/Elements/head.php'); ?>
+<?php include('Vue/Elements/nav.php'); ?>
 
 <!-- Photo header-->
 <div class="row">
@@ -7,7 +7,7 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="Photos/home.jpg" alt="Home">
+          <img class="d-block w-100" src="Vue/Photos/home.jpg" alt="Home">
           <div class="carousel-caption d-none d-md-block">
             <h3>Billet simple pour L'Alaska</h3>
             <p>Un voyage sans retour</p>
@@ -32,13 +32,13 @@
         </p>
       </div>
       <div class="col-6 col-sm-3">
-        <img class="img-fluid p-5" alt="home_1" src="Photos/edit.png">
+        <img class="img-fluid p-5" alt="home_1" src="Vue/Photos/edit.png">
       </div>
     </div>
 
     <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center">
       <div class="col-6 col-sm-3">
-        <img class="img-fluid p-5" alt="home_2" src="Photos/information.png">
+        <img class="img-fluid p-5" alt="home_2" src="Vue/Photos/information.png">
       </div>
       <div class="col-12 col-sm-9 text-center text-sm-right">
         <h4>Restez Informé</h4>
@@ -55,10 +55,10 @@
         <p>Réagisez, débatez, intéragisez avec l'auteur et les autres lecteurs.</p>
       </div>
       <div class="col-6 col-sm-3">
-        <img class="img-fluid p-5" alt="home_3" src="Photos/chat.png">
+        <img class="img-fluid p-5" alt="home_3" src="Vue/Photos/chat.png">
       </div>
     </div>
   </div>
 </div>
 
-<?php include('Elements/footer.php'); ?>
+<?php include('Vue/Elements/footer.php'); ?>

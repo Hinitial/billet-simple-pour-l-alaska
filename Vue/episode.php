@@ -1,5 +1,17 @@
-<?php include('Elements/head.php'); ?>
-<?php include('Elements/nav.php'); ?>
+<?php include('Vue/Elements/head.php'); ?>
+<?php include('Vue/Elements/nav.php'); ?>
+<<?php $tableau_mois = array( '1' => 'Janvier',
+                              '2' => 'Février',
+                              '3' => 'Mars',
+                              '4' => 'Avril',
+                              '5' => 'Mai',
+                              '6' => 'Juin',
+                              '7' => 'Juillet',
+                              '8' => 'Août',
+                              '9' => 'Septembre',
+                              '10' => 'Octobre',
+                              '11' => 'Novembre',
+                              '12' => 'Décembre'); ?>
 
 <!-- corp texte -->
  <div class="row justify-content-center">
@@ -27,7 +39,7 @@
             //dateTime declaration
             $date = new DateTime($enter['date_post']);
             $date_new = clone $date;
-            $date_new->add(new DateInterval('P7D'));
+            $date_new->add(new DateInterval('P7D')); //intervale de 7 jours
             $now = new DateTime('now');
         ?>
           <tr scope="row">
@@ -44,7 +56,7 @@
               </a>
             </td>
             <td class="text-right text-secondary">
-              <?php echo $enter['date_post']//$enter['jour'].' '.$enter['mois'].' '.$enter['annee']; ?>
+              <?php echo $enter['jour'].' '.$tableau_mois[($enter['mois'])].' '.$enter['annee']; ?>
             </td>
           </tr>
         <?php endforeach; ?>
@@ -54,4 +66,4 @@
   </div>
 </div>
 
-<?php include('Elements/footer.php'); ?>
+<?php include('Vue/Elements/footer.php'); ?>

@@ -1,5 +1,5 @@
-<?php include('Elements/head.php'); ?>
-<?php include('Elements/nav.php'); ?>
+<?php include('Vue/Elements/head.php'); ?>
+<?php include('Vue/Elements/nav.php'); ?>
 
 <div class="row justify-content-center">
  <div class="col-11 col-md-10 col-lg-8 col-xl-6 py-5">
@@ -28,4 +28,4 @@
  </div>
 </div>
 
-<?php include('Elements/footer.php'); ?>
+<?php include('Vue/Elements/footer.php'); ?>
