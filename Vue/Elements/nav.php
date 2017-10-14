@@ -15,7 +15,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a class="btn btn-outline-primary my-2 my-sm-0" href="#">Connexion</a>
+      <a class="btn btn-outline-primary my-2 my-sm-0" href="connexion.php">Connexion</a>
     </form>
   </div>
   </div>
