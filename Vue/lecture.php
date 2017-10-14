@@ -1,5 +1,8 @@
-<?php include('Vue/Elements/head.php'); ?>
-<?php include('Vue/Elements/nav.php'); ?>
+<?php
+  include('Vue/Elements/head.php');
+  get_head('Lecture');
+  include('Vue/Elements/nav.php');
+?>
 
 <div class="row justify-content-center">
  <div class="col-11 col-md-10 col-lg-8 col-xl-6 py-5">

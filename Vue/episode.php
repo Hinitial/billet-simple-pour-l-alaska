@@ -1,5 +1,8 @@
-<?php include('Vue/Elements/head.php'); ?>
-<?php include('Vue/Elements/nav.php'); ?>
+<?php
+  include('Vue/Elements/head.php');
+  get_head('Liste des épisodes');
+  include('Vue/Elements/nav.php');
+?>
 <<?php $tableau_mois = array( '1' => 'Janvier',
                               '2' => 'Février',
                               '3' => 'Mars',

@@ -1,5 +1,8 @@
-<?php include('Vue/Elements/head.php'); ?>
-<?php include('Vue/Elements/nav.php'); ?>
+<?php
+  include('Vue/Elements/head.php');
+  get_head('Accueil');
+  include('Vue/Elements/nav.php');
+?>
 
 <!-- Photo header-->
 <div class="row">
@@ -25,10 +28,10 @@
 
     <div class="d-flex flex-column-reverse flex-sm-row justify-content-center align-items-center">
       <div class="col-12 col-sm-9 text-center text-sm-left">
-        <h4>Une nouvelle facon de publié</h4>
+        <h4>Une nouvelle facon de publier</h4>
         <p>
-          Changement d'aire. Accedez directement en ligne à l'ouvre original<br>
-          Un nouveau modele économique, plus pratique et plus moderne
+          Changement d'aire. Accedez directement en ligne à l'oeuvre original<br>
+          Un nouveau modèle économique, plus pratique et plus moderne
         </p>
       </div>
       <div class="col-6 col-sm-3">
@@ -43,8 +46,7 @@
       <div class="col-12 col-sm-9 text-center text-sm-right">
         <h4>Restez Informé</h4>
         <p>
-          Un projet édité sur la durée. Connectez-vous pour suivre la publication<br>
-          Suivez pas à pas chaque épisodes
+          Un projet édité sur la durée. Suivez pas à pas le livre
         </p>
       </div>
     </div>

@@ -1,7 +1,7 @@
 <!-- nav -->
 <nav class="justify-content-center navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
-  <a class="navbar-brand d-sm-none" href="index.html">Billet simple pour l'Alaska</a>
+  <a class="navbar-brand d-sm-none" href="index.php">Billet simple pour l'Alaska</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,7 +15,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a class="btn btn-outline-primary my-2 my-sm-0" href="connexion.php">Connexion</a>
+      <a class="btn btn-outline-primary my-2 my-sm-0" href="#">Connexion</a>
     </form>
   </div>
   </div>
