@@ -1,6 +1,6 @@
 <?php
   include('Vue/Elements/head.php');
-  get_head('Administration');
+  get_head('Administration','back');
   include('Vue/Elements/nav-admin.php');
 ?>
 

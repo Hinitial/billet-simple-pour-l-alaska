@@ -1,6 +1,6 @@
 <?php
   include('Vue/Elements/head.php');
-  get_head('Connexion');
+  get_head('Connexion','');
 ?>
 
 <!-- corp -->
@@ -17,12 +17,14 @@
     <?php endif; ?>
     <h1 class="row justify-content-center" >Connexion</h1>
     <p class="row justify-content-center" >Administration du site</p>
-    <form class="" action="connexion.php" method="post">
-      <div class="row justify-content-center py-3">
-        <div class="col-12 col-sm-6 py-2">
+    <form class="" action="index.php?section=connexion" method="post">
+      <div class="row justify-content-center py-2">
+        <div class="col-12 col-sm-6">
           <input type="email" class="form-control" name="email" placeholder="Email">
         </div>
-        <div class="col-12 col-sm-6 py-2">
+      </div>
+      <div class="row justify-content-center pb-3">
+        <div class="col-12 col-sm-6">
           <input type="password" class="form-control" name="password" placeholder="Mot de passe">
         </div>
       </div>

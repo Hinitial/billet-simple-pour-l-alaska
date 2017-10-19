@@ -7,14 +7,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item <?php echo (strpos($_SERVER['PHP_SELF'], '/admin.php') === FALSE) ? '' : 'active' ;?>">
-        <a class="nav-link" href="admin.php">Acceuil </a>
+      <li class="nav-item <?php echo (($_GET['section']) === 'admin') ? 'active' : '' ;?>">
+        <a class="nav-link" href="index.php?section=admin">Acceuil </a>
       </li>
-      <li class="nav-item <?php echo (strpos($_SERVER['PHP_SELF'], '/admin-post.php') === FALSE) ? '' : 'active' ;?>">
-        <a class="nav-link" href="admin-post.php">Épisodes</a>
+      <li class="nav-item <?php echo (($_GET['section']) === 'admin-post') ? 'active' : '' ;?>">
+        <a class="nav-link" href="index.php?section=admin-post">Épisodes</a>
       </li>
-      <li class="nav-item <?php echo (strpos($_SERVER['PHP_SELF'], '/admin-comment.php') === FALSE) ? '' : 'active' ;?>">
-        <a class="nav-link" href="admin-comment.php">Commentaires</a>
+      <li class="nav-item <?php echo (($_GET['section']) === 'admin-comment') ? 'active' : '' ;?>">
+        <a class="nav-link" href="index.php?section=admin-comment">Commentaires</a>
       </li>
     </ul>
   </div>

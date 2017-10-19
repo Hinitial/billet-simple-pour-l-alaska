@@ -21,7 +21,7 @@ if(isset($_POST['email']) AND isset ($_POST['password'])){
     if ($entre['email'] == $email && $entre['password'] == md5($password)){
       $_SESSION['connexion']=true;
       $_SESSION['alert']=false;
-      header('Location: admin.php');
+      header('Location: index.php?section=admin');
       exit();
     }
   }

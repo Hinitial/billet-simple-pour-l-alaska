@@ -1,4 +1,4 @@
-<?php function get_head($titre){ ?>
+<?php function get_head($titre, $style){ ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,7 +10,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="Vue/style<?php echo $style ?> .css" >
   </head>
   <body>
     <div class="">

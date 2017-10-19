@@ -1,6 +1,6 @@
 <?php
   include('Vue/Elements/head.php');
-  get_head('Lecture');
+  get_head('Lecture','front');
   include('Vue/Elements/nav.php');
 ?>
 
@@ -13,7 +13,7 @@
 
    <!-- Commantaires -->
    <div class="mt-5">
-     <h4>Commantaire</h4>
+     <h4>Commentaire</h4>
 
      <form class="pb-5 pt-2" action="index.html" method="post">
        <div class="form-group">
