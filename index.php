@@ -29,7 +29,19 @@ else {
       include_once("Controler/".$_GET['section'].".php");
       break;
 
+    case 'admin-post-edit':
+      include_once("Controler/".$_GET['section'].".php");
+      break;
+
+    case 'gestion_episode':
+      include_once("Controler/".$_GET['section'].".php");
+      break;
+
     case 'admin-comment':
+      include_once("Controler/".$_GET['section'].".php");
+      break;
+
+    case 'deconnexion':
       include_once("Controler/".$_GET['section'].".php");
       break;
 

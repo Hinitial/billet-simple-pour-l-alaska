@@ -5,7 +5,7 @@
 ?>
 
 <!-- corp -->
- <div class="row justify-content-center">
+ <div class="row no-gutters justify-content-center">
   <div class="col-12 col-md-10 col-lg-8 col-xl-6 py-5">
 
     <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center my-5">

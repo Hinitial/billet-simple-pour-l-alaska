@@ -3,7 +3,7 @@
   get_head('Liste des épisodes','front');
   include('Vue/Elements/nav.php');
 ?>
-<<?php $tableau_mois = array( '1' => 'Janvier',
+<?php $tableau_mois = array( '1' => 'Janvier',
                               '2' => 'Février',
                               '3' => 'Mars',
                               '4' => 'Avril',
@@ -17,7 +17,7 @@
                               '12' => 'Décembre'); ?>
 
 <!-- corp texte -->
- <div class="row justify-content-center">
+ <div class="row no-gutters justify-content-center">
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
     <h1 class="text-center my-5">Liste des Épisodes</h1>
 
