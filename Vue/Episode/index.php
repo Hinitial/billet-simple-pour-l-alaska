@@ -1,8 +1,5 @@
-<?php
-  include('Vue/Elements/head.php');
-  get_head('Liste des épisodes','front');
-  include('Vue/Elements/nav.php');
-?>
+<?php $this->titre = "Liste des épisodes"; ?>
+
 <?php $tableau_mois = array( '1' => 'Janvier',
                               '2' => 'Février',
                               '3' => 'Mars',
@@ -23,7 +20,7 @@
 
         <?php
           //debut de la boucle
-          foreach ($liste as $enter):
+          foreach ($episodes as $enter):
 
             //dateTime declaration
             $date = new DateTime($enter['date_post']);
@@ -47,11 +44,11 @@
                 <span class="badge badge-primary mr-1">Coming soon</span>
               <?php endif; ?>
 
-              <a href="index.php?section=lecture&post=<?php echo $enter['id_episode']; ?>" >
+              <a href="index.php?section=lecture&id=<?php echo $enter['id_episode']; ?>" >
                 <?php echo $enter['titre']; ?>
               </a>
             </h4>
-            <p class="col-12">Nam convallis hendrerit lacus, vitae aliquet orci finibus sed. Donec gravida lectus sit amet rutrum varius. Pellentesque porta nunc sit amet ligula ultricies cursus. Etiam consequat ipsum congue, tincidunt quam laoreet, sodales orci. Duis eget efficitur lectus. In hac habitasse platea dictumst. Duis finibus, justo vel iaculis pellentesque, risus risus malesuada ligula, sed maximus urna nisi sed urna.</p>
+            <p class="col-12"><?php echo strip_tags($enter['post']); ?>...</p>
             <p class="col-12 text-right text-secondary">
               <?php echo $enter['jour'].' '.$tableau_mois[($enter['mois'])].' '.$enter['annee']; ?>
             </p>
@@ -61,5 +58,3 @@
 
   </div>
 </div>
-
-<?php include('Vue/Elements/footer.php'); ?>

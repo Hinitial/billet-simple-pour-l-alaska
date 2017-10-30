@@ -1,7 +1,4 @@
-<?php
-  include('Vue/Elements/head.php');
-  get_head('Administration édition','back');
-  include('Vue/Elements/nav-admin.php');
+<?php $this->titre = "Administration édition";
 
   $tableau_mois = array( '1' => 'Janvier',
                                 '2' => 'Février',
@@ -26,11 +23,11 @@
     <form class="mb-5" action="index.php?section=gestion_episode&db=<?php if($_GET['id'] == 'new'){echo 'insert';}else{echo 'update&id='.$_GET['id'];}?>" method="post">
       <div class="form-group">
         <label for="titre">Titre de l'épisode</label>
-        <input type="text" class="form-control" name="titre" id="titre" value="<?php if($_GET['id'] !== 'new'){echo $donnee['titre'];}else{echo 'Votre titre';}?>">
+        <input type="text" class="form-control" name="titre" id="titre" value="<?php if($_GET['id'] !== 'new'){echo $episodes['titre'];}else{echo 'Votre titre';}?>">
       </div>
       <div class="form-group">
         <label for="episode">Épisode</label>
-        <textarea id="episode" class="form-control" name="post" rows="25" value=""><?php if($_GET['id'] !== 'new'){echo $donnee['post'];}else{echo 'Votre post';}?></textarea>
+        <textarea id="episode" class="form-control" name="post" rows="25" value=""><?php if($_GET['id'] !== 'new'){echo $episodes['post'];}else{echo 'Votre post';}?></textarea>
       </div>
 
 
@@ -55,14 +52,14 @@
 
           <?php
           // Si deja publié
-          if ($donnee['publication'] == true): ?>
+          if ($episodes['publication'] == true): ?>
             <div class="col-sm-5">
               <div class="input-group">
                 <span class="input-group-btn">
                   <button type="submit" name="publier" class="btn btn-primary">Enregistrer</button>
                 </span>
                 <?php
-                  $date = new DateTime($donnee['date_post']);
+                  $date = new DateTime($episodes['date_post']);
                   $date_post = $date->format('Y-m-d\TH:i:s');
                  ?>
                 <input type="datetime-local" class="form-control" id="date_post" name="date_post" value="<?php echo $date_post;?>">
@@ -92,5 +89,3 @@
     </form>
   </div>
 </div>
-
-<?php include_once('Vue/Elements/end.php'); ?>

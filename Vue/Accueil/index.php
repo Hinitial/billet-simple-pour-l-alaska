@@ -1,8 +1,17 @@
-<?php
-  include('Vue/Elements/head.php');
-  get_head('Accueil','front');
-  include('Vue/Elements/nav.php');
-?>
+<?php $this->titre = "Accueil"; ?>
+
+<?php $tableau_mois = array( '1' => 'Janvier',
+                              '2' => 'Février',
+                              '3' => 'Mars',
+                              '4' => 'Avril',
+                              '5' => 'Mai',
+                              '6' => 'Juin',
+                              '7' => 'Juillet',
+                              '8' => 'Août',
+                              '9' => 'Septembre',
+                              '10' => 'Octobre',
+                              '11' => 'Novembre',
+                              '12' => 'Décembre'); ?>
 
 <!-- Photo header-->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -36,31 +45,39 @@
 
 <div class="row no-gutters justify-content-center bg-light">
  <div class="col-12 col-md-10 col-lg-8 col-xl-6 py-5">
-   <h4 class="text-center">Derniers Chapitres</h4>
+   <h4 class="text-center">Derniers épisodes</h4>
    <div class="row">
-     <div class="col-12 col-sm-6 py-3">
 
-       <div class="card">
-         <div class="card-body">
-           <p class="card-text text-center"><span class="badge badge-primary mr-1">Cooming Soon</span></p>
-           <h4 class="card-title text-center">Serment</h4>
-           <p class="card-text text-justify">Integer in sodales turpis. Nam feugiat erat risus, quis commodo elit ullamcorper vitae. Quisque magna ligula, maximus quis lobortis  amet volutpat...</p>
-           <p class="text-secondary">21 Avril</p>
-           <a href="#" class="btn btn-secondary">Go somewhere</a>
+     <?php
+       //debut de la boucle
+       foreach ($episodes as $enter):
+
+         //dateTime declaration
+         $date = new DateTime($enter['date_post']);
+         $date_new = clone $date;
+         $date_new->add(new DateInterval('P7D')); //intervale de 7 jours
+         $now = new DateTime('now');
+     ?>
+       <div class="col-12 col-sm-6 py-3">
+         <div class="card">
+           <div class="card-body">
+             <p class="card-text text-center">
+               <?php if ($now <= $date_new && $now >= $date): //Nouvel episode?>
+                 <span class="badge badge-danger mr-1">New</span>
+               <?php endif; ?>
+
+               <?php if ($now < $date): //Prochain episode?>
+                 <span class="badge badge-primary mr-1">Coming soon</span>
+               <?php endif; ?>
+             </p>
+             <h4 class="card-title text-center"><?php echo $enter['titre']; ?></h4>
+             <p class="card-text"><?php echo strip_tags($enter['post']); ?>...</p>
+             <p class="text-secondary"><?php echo $enter['jour'].' '.$tableau_mois[($enter['mois'])].' '.$enter['annee']; ?></p>
+             <a href="index.php?section=lecture&post=<?php echo $enter['id_episode']; ?>" class="btn btn-secondary">Aller a l'épisode</a>
+           </div>
          </div>
        </div>
-     </div>
-
-     <div class="col-12 col-sm-6 py-3">
-       <div class="card">
-         <div class="card-body">
-           <p class="card-text text-center"><span class="badge badge-danger mr-1">New</span></p>
-           <h4 class="card-title text-center">Sang</h4>
-           <p class="card-text text-justify">Etiam eget justo eu leo sodales blandit. Quisque tempus est id justo condimentum convallis. Phasellus volutpat orci. Suspendisse fringilla nullam...</p>
-           <p class="text-secondary">21 Avril</p>
-           <a href="#" class="btn btn-secondary">Go somewhere</a>
-         </div>
-       </div>
+     <?php endforeach; ?>
 
      </div>
    </div>
@@ -82,5 +99,3 @@
    </div>
  </div>
 </div>
-
-<?php include('Vue/Elements/footer.php'); ?>

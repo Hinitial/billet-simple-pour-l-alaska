@@ -1,7 +1,4 @@
-<?php
-  include('Vue/Elements/head.php');
-  get_head('Connexion','');
-?>
+<?php $this->titre = "Connexion"; ?>
 
 <!-- corp -->
  <div class="row justify-content-center align-items-center" >
@@ -17,7 +14,7 @@
     <?php endif; ?>
     <h1 class="row justify-content-center" >Connexion</h1>
     <p class="row justify-content-center" >Administration du site</p>
-    <form class="" action="index.php?section=connexion" method="post">
+    <form class="" action="index.php?section=connexion&action=connexion" method="post">
       <div class="row justify-content-center py-2">
         <div class="col-12 col-sm-6">
           <input type="email" class="form-control" name="email" placeholder="Email">
@@ -35,6 +32,3 @@
     <p class="row justify-content-center py-3" ><a href="index.php">Revenir au site</a></p>
   </div>
 </div>
-</div>
-
-<?php include_once('Vue/Elements/end.php'); ?>

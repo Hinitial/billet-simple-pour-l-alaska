@@ -1,7 +1,4 @@
-<?php
-  include('Vue/Elements/head.php');
-  get_head('Administration épisode','back');
-  include('Vue/Elements/nav-admin.php');
+<?php $this->titre = "Administration épisodes";
 
   $tableau_mois = array( '1' => 'Janvier',
                                 '2' => 'Février',
@@ -23,7 +20,7 @@
  <div class="row no-gutters justify-content-center">
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
     <h1 class="text-center my-5">Liste des Épisodes</h1>
-    <a class="btn btn-primary" href="index.php?section=admin-post-edit&id=new">Ajouter un épisode</a>
+    <a class="btn btn-primary" href="index.php?section=adminedit&id=new">Ajouter un épisode</a>
     <table class="table table-striped mb-5">
       <thead class="thead-inverse">
         <tr scope="row" class="">
@@ -37,11 +34,11 @@
 
         <?php
           //debut de la boucle
-          foreach ($liste as $enter):
+          foreach ($episodes as $enter):
         ?>
         <tr scope="row">
           <th><?php echo $enter['id_episode']; ?></th>
-          <td><a href="index.php?section=admin-post-edit&id=<?php echo $enter['id_episode']; ?>"><?php echo $enter['titre']; ?></a></td>
+          <td><a href="index.php?section=adminedit&id=<?php echo $enter['id_episode']; ?>"><?php echo $enter['titre']; ?></a></td>
           <?php if ($enter['publication'] == false): ?>
             <td class="text-warning">Brouillon</td>
           <?php endif; ?>
@@ -62,5 +59,3 @@
     </table>
   </div>
 </div>
-
-<?php include_once('Vue/Elements/end.php'); ?>
