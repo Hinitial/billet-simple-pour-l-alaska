@@ -10,6 +10,6 @@ class ControlerAdmin extends Controleur
 
   public function index()
   {
-    $this->genererVue(array('vide'), 'back');
+    $this->genererVue(array(), 'back');
   }
 }

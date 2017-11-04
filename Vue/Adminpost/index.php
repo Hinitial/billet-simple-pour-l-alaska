@@ -21,7 +21,7 @@
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
     <h1 class="text-center my-5">Liste des Épisodes</h1>
     <a class="btn btn-primary" href="index.php?section=adminedit&id=new">Ajouter un épisode</a>
-    <table class="table table-striped mb-5">
+    <table class="table table-admin mb-5">
       <thead class="thead-inverse">
         <tr scope="row" class="">
           <th>#</th>

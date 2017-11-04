@@ -18,32 +18,24 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="Vue/Photos/home.jpg" alt="Home">
-      <div class="carousel-caption d-none d-md-block">
-        <h3>Billet simple pour L'Alaska</h3>
-        <p>Un voyage sans retour</p>
-        <a href="index.php?section=episode" class="btn btn-primary">Commencer la lecture</a>
+      <div class="carousel-caption d-none d-md-block align-items-start ">
+
+
+        <h3 class="col-12 text-center">Billet simple pour L'Alaska</h3>
+        <p class="col-12 text-center mb-3">Un voyage sans retour</p>
+        <p class="text-justify">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut gravida mauris. Fusce quis ante vitae purus hendrerit sollicitudin. Integer ac mollis lectus. Curabitur tellus erat, pellentesque in dictum eget, tincidunt varius enim. Nam non fermentum nunc, et feugiat mauris. Ut porttitor dolor in lacus placerat, et dictum odio eleifend. Suspendisse justo justo, auctor nec sem eget, placerat varius risus. Sed ultricies dignissim molestie. Sed pellentesque auctor interdum. Morbi non pulvinar est. Cras a felis tincidunt, elementum purus nec, dapibus nisl. Maecenas sem odio, consequat ac egestas a, consectetur quis elit.
+        </p>
+        <p class="text-justify">
+          Nullam interdum rutrum ultrices. Phasellus fermentum, lorem eget pharetra dapibus, orci ligula consectetur massa, et volutpat dui quam non sem. Praesent non arcu eget sapien fermentum laoreet non quis libero. Nunc egestas est ac tempor fringilla. Ut erat nisl, accumsan non justo vitae, facilisis rhoncus massa. Sed eget commodo ex, a dapibus dui. Morbi quis massa non lacus tempor molestie sed vel sem. Etiam diam ipsum, rutrum a sapien ut, faucibus gravida diam. In et tristique odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis pharetra metus, at ultricies neque consectetur vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <a href="episodes.html" class="btn btn-primary">Commencer la lecture</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- corp -->
 <div class="row no-gutters justify-content-center">
-  <div class="col-12 col-md-10 col-lg-8 col-xl-6 py-5">
-
-    <article class="row no-gutters justify-content-center mb-4">
-      <h4 class="text-center">Preface</h4>
-      <p class="text-justify">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut gravida mauris. Fusce quis ante vitae purus hendrerit sollicitudin. Integer ac mollis lectus. Curabitur tellus erat, pellentesque in dictum eget, tincidunt varius enim. Nam non fermentum nunc, et feugiat mauris. Ut porttitor dolor in lacus placerat, et dictum odio eleifend. Suspendisse justo justo, auctor nec sem eget, placerat varius risus. Sed ultricies dignissim molestie. Sed pellentesque auctor interdum. Morbi non pulvinar est. Cras a felis tincidunt, elementum purus nec, dapibus nisl. Maecenas sem odio, consequat ac egestas a, consectetur quis elit.
-      </p>
-      <p class="text-justify">
-        Nullam interdum rutrum ultrices. Phasellus fermentum, lorem eget pharetra dapibus, orci ligula consectetur massa, et volutpat dui quam non sem. Praesent non arcu eget sapien fermentum laoreet non quis libero. Nunc egestas est ac tempor fringilla. Ut erat nisl, accumsan non justo vitae, facilisis rhoncus massa. Sed eget commodo ex, a dapibus dui. Morbi quis massa non lacus tempor molestie sed vel sem. Etiam diam ipsum, rutrum a sapien ut, faucibus gravida diam. In et tristique odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis pharetra metus, at ultricies neque consectetur vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
-    </article>
-  </div>
-</div>
-
-<div class="row no-gutters justify-content-center bg-light">
  <div class="col-12 col-md-10 col-lg-8 col-xl-6 py-5">
    <h4 class="text-center">Derniers épisodes</h4>
    <div class="row">
@@ -60,7 +52,7 @@
      ?>
        <div class="col-12 col-sm-6 py-3">
          <div class="card">
-           <div class="card-body">
+           <div class="card-body bg-light">
              <p class="card-text text-center">
                <?php if ($now <= $date_new && $now >= $date): //Nouvel episode?>
                  <span class="badge badge-danger mr-1">New</span>

@@ -1,14 +1,14 @@
 <?php $this->titre = "Connexion"; ?>
 
 <!-- corp -->
- <div class="row justify-content-center align-items-center" >
-  <div class="col-11 col-md-10 col-lg-8 col-xl-6 py-5" >
-    <?php if ($_SESSION['alert'] == true): ?>
+ <div class="full row no-gutters justify-content-center" >
+  <div class="col-11 col-md-10 col-lg-8 col-xl-6 my-5 py-5" >
+    <?php if (isset($_SESSION['alert']) && $_SESSION['alert'] == true): ?>
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        Identifiants incorrect
+        Identifiant ou mot de passe incorrect
       </div>
       <?php $_SESSION['alert']=false; ?>
     <?php endif; ?>
@@ -17,7 +17,7 @@
     <form class="" action="index.php?section=connexion&action=connexion" method="post">
       <div class="row justify-content-center py-2">
         <div class="col-12 col-sm-6">
-          <input type="email" class="form-control" name="email" placeholder="Email">
+          <input type="text" class="form-control" name="email" placeholder="Email ou Identifiant">
         </div>
       </div>
       <div class="row justify-content-center pb-3">

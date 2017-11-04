@@ -16,13 +16,13 @@ class Commentaire extends Modele
         $sql = 'SELECT id_commentaire, nom, post, date_post, signalement, id_episode FROM alk_commentaire ORDER BY signalement DESC LIMIT ?, ?';
         $commentaire = $this->executeRequete($sql, array($offset, $limit));
       } else {
-        $sql = 'SELECT id_commentaire, nom, post, date_post, signalement, id_episode FROM alk_commentaire ORDER BY signalement';
+        $sql = 'SELECT id_commentaire, nom, post, date_post, signalement, id_episode FROM alk_commentaire ORDER BY signalement DESC';
         $commentaire = $this->executeRequete($sql);
       }
     }
     else {
       $sql = 'SELECT id_commentaire, nom, post, date_post, signalement, id_episode FROM alk_commentaire WHERE id_commentaire = ?';
-      $commentaire = $this->executeRequete($sql, array($id_rechercher));
+      $commentaire = $this->executeRequete($sql, array((int)$id_rechercher));
       $commentaire = $commentaire->fetch();
     }
     return $commentaire;
@@ -33,11 +33,11 @@ class Commentaire extends Modele
   {
     $commentaire;
     if ($offset !== null && $limit !== null) {
-      $sql = 'SELECT id_commentaire, nom, post, date_post, signalement, id_episode FROM alk_commentaire ORDER BY signalement WHERE id_episode = :id_article ORDER BY date_post DESC LIMIT :_offset, :_limit';
-      $commentaire = $this->executeRequete($sql, array('id_article' => $id_article, '_offset' => ((int)$offset), '_limit' => ((int)$limit) ));
+      $sql = 'SELECT id_commentaire, nom, post, date_post, signalement, id_episode FROM alk_commentaire WHERE id_episode = :id_article ORDER BY date_post LIMIT :_offset, :_limit';
+      $commentaire = $this->executeRequete($sql, array('id_article' => ((int)$id_article), '_offset' => ((int)$offset), '_limit' => ((int)$limit) ));
     } else {
-      $sql = 'SELECT id_commentaire, nom, post, date_post, signalement, id_episode FROM alk_commentaire ORDER BY signalement WHERE id_episode = :id_article ORDER BY date_post DESC';
-      $commentaire = $this->executeRequete($sql, array('id_article' => $id_article ));
+      $sql = 'SELECT id_commentaire, nom, post, date_post, signalement, id_episode FROM alk_commentaire WHERE id_episode = :id_article ORDER BY date_post';
+      $commentaire = $this->executeRequete($sql, array('id_article' => ((int)$id_article) ));
     }
     return $commentaire;
   }
@@ -48,11 +48,21 @@ class Commentaire extends Modele
   public function insertBdd($nom, $post, $id_episode)
   {
     $tab = array(
-        'titre' => $titre,
+        'nom' => $nom,
         'post' => $post,
         'id_episode' => $id_episode);
 
-    $sql = 'INSERT INTO alk_episode(nom, post, date_post, signalement, id_episode) VALUES(:titre, :post,  NOW(), 0, :id_episode )';
+    $sql = 'INSERT INTO alk_commentaire(nom, post, date_post, signalement, id_episode) VALUES(:nom, :post,  NOW(), 0, :id_episode )';
+    $commentaire = $this->executeRequete($sql, $tab);
+  }
+
+  //Mets à jour une entré
+  public function updateBDD($id)
+  {
+    $tab = array(
+        'id' => $id);
+
+    $sql = 'UPDATE alk_commentaire SET signalement = (signalement+1) WHERE id_commentaire = :id';
     $commentaire = $this->executeRequete($sql, $tab);
   }
 

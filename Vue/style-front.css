@@ -1,0 +1,12 @@
+.full{
+  height: 90vh;
+}
+
+.card{
+  border: 0px solid rgba(0,0,0,.125) !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.table-admin{
+  
+}

@@ -15,12 +15,13 @@
 ?>
 
 <!-- corp texte -->
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script src="tinymce/js/tinymce/tinymce.min.js"></script>
+<script src="tinymce/js/tinymce/jquery.tinymce.min.js"></script>
 <script>tinymce.init({ selector:'textarea' });</script>
 <div class="row no-gutters justify-content-center">
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
-    <h1 class="text-center my-5"></h1>
-    <form class="mb-5" action="index.php?section=gestion_episode&db=<?php if($_GET['id'] == 'new'){echo 'insert';}else{echo 'update&id='.$_GET['id'];}?>" method="post">
+    <h1 class="text-center my-5">Édition</h1>
+    <form class="mb-5" action="index.php?section=adminedit&action=gestion&db=<?php if($_GET['id'] == 'new'){echo 'insert';}else{echo 'update&id='.$_GET['id'];}?>" method="post">
       <div class="form-group">
         <label for="titre">Titre de l'épisode</label>
         <input type="text" class="form-control" name="titre" id="titre" value="<?php if($_GET['id'] !== 'new'){echo $episodes['titre'];}else{echo 'Votre titre';}?>">

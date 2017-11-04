@@ -29,7 +29,7 @@ class Routeur
   {
     $controleur = 'Accueil';
     if ($requete->existeParametre('section')) {
-      if (isset($_SESSION['connexion']) && $_SESSION['connexion'] !== true && strpos(($requete->getParametre('section')),'admin') !== false) {
+      if ((isset($_SESSION['connexion']) !== true || $_SESSION['connexion'] !== true) && strpos(($requete->getParametre('section')),'admin') !== false) {
         header('Location: index.php?section=connexion');
       }
       $controleur = $requete->getParametre('section');

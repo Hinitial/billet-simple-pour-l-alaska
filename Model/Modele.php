@@ -15,17 +15,12 @@ abstract class Modele
     }
     else {
       $resultat = $this->getBdd()->prepare($requeteSql);
-        if (isset($parametre['_offset']) && isset($parametre['_limit'])) {
-          if (isset($parametre['taille'])) {
-            $resultat->bindParam(':taille', $parametre['taille'], PDO::PARAM_INT);
-          }
-          $resultat->bindParam(':_offset', $parametre['_offset'], PDO::PARAM_INT);
-          $resultat->bindParam(':_limit', $parametre['_offset'], PDO::PARAM_INT);
-          $resultat->execute();
+      foreach ($parametre as $key => $value) {
+        if (is_int($value)) {
+          $resultat->bindParam(':'.$key, $value, PDO::PARAM_INT);
         }
-        else {
-          $resultat->execute($parametre);
-        }
+      }
+      $resultat->execute($parametre);
     }
     return $resultat;
   }

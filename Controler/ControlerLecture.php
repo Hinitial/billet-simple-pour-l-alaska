@@ -31,6 +31,15 @@ class ControlerLecture extends Controleur
     $nom = $this->requete->getParametre('nom');
     $post = $this->requete->getParametre('commentaire');
     $id_episode = $this->requete->getParametre('id');
-    $commentaire = $this->commentaire->innerBdd($nom, $post, $id_episode);
+    $commentaire = $this->commentaire->insertBdd($nom, $post, $id_episode);
+    header('Location: index.php?section=lecture&id=' . $id_episode);
+  }
+
+  public function signalement()
+  {
+    $id_episode = $this->requete->getParametre('id');
+    $id_commentaire = $this->requete->getParametre('id_commentaire');
+    $this->commentaire->updateBDD($id_commentaire);
+    header('Location: index.php?section=lecture&id=' . $id_episode);
   }
 }

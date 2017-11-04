@@ -17,7 +17,7 @@ class ControlerAccueil extends Controleur
 
   public function index()
   {
-    $episodes = $this->episode->getEpisodesExtrait(200, 0, 2);
+    $episodes = $this->episode->getEpisodesAccueil();
     $this->genererVue(array('episodes' => $episodes), 'front');
   }
 }

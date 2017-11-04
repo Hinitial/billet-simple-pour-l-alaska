@@ -19,7 +19,7 @@ $tableau_mois = array( '1' => 'Janvier',
 <!-- corp texte -->
 <div class="row no-gutters justify-content-center">
 <div class="col-12 col-md-10 col-lg-8 col-xl-6">
-  <h1 class="text-center my-5">Liste des Épisodes</h1>
+  <h1 class="text-center my-5">Commentaire</h1>
   <table class="table table-striped mb-5">
     <thead class="thead-inverse">
       <tr scope="row" class="">
@@ -27,7 +27,8 @@ $tableau_mois = array( '1' => 'Janvier',
         <th>Utilisateur</th>
         <th>Épisode</th>
         <th class="text-center">Signalement</th>
-        <th class="text-right">Date</th>
+        <th class="text-right">Date commentaire</th>
+        <th class="text-center"></th>
       </tr>
     </thead>
     <tbody class="">
@@ -41,15 +42,16 @@ $tableau_mois = array( '1' => 'Janvier',
         <td><?php echo $enter['nom']; ?></td>
         <td><?php echo $enter['id_episode']; ?></td>
         <?php if ($enter['signalement'] < 1): ?>
-          <td class="text-center"><span class="badge badge-danger"><?php echo $enter['signalement']; ?></span></td>
+          <td class="text-center"><span class="badge badge-secondary"><?php echo $enter['signalement']; ?></span></td>
         <?php else: ?>
           <?php if ($enter['signalement'] > 5): ?>
-            <td class="text-center"><span class="badge badge-warning"><?php echo $enter['signalement']; ?></span></td>
+            <td class="text-center"><span class="badge badge-danger"><?php echo $enter['signalement']; ?></span></td>
           <?php else: ?>
-            <td class="text-center"><span class="badge badge-secondary"><?php echo $enter['signalement']; ?></span></td>
+            <td class="text-center"><span class="badge badge-warning"><?php echo $enter['signalement']; ?></span></td>
           <?php endif; ?>
         <?php endif; ?>
         <td class="text-right text-secondary"><?php echo $enter['date_post']; ?></td>
+        <td class="text-center"><a href="index.php?section=adminCommentaireEdit&id=<?php echo $enter['id_commentaire']; ?>">Modérer</a> | <a href="index.php?section=adminCommentaireEdit&id=<?php echo $enter['id_commentaire']; ?>">Supprimez</a></td>
       </tr>
       <?php endforeach;  //fin de boucle?>
     </tbody>

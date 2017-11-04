@@ -63,6 +63,14 @@ class Episodes extends Modele
     return $episode;
   }
 
+  //Renvoie les debut des épisodes
+  public function getEpisodesAccueil()
+  {
+    $sql = 'SELECT id_episode, titre, SUBSTR(post, 1, 250) AS post, publication, date_post, DAY(date_post) AS jour, MONTH(date_post) AS mois, YEAR(date_post) AS annee FROM alk_episode WHERE publication = 1 ORDER BY id_episode DESC LIMIT 0, 2';
+    $episode = $this->executeRequete($sql);
+    return $episode;
+  }
+
   // ----- Fonction Modicfiction BDD -----
 
   //Insertion d'une entré
