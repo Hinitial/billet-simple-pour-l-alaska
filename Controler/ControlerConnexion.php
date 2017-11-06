@@ -22,35 +22,15 @@ class ControlerConnexion extends Controleur
 
   public function connexion()
   {
-    if(isset($_POST['email']) && isset ($_POST['password'])){
-
-      $identifiant = $this->requete->getParametre('email');
-      $password = $this->requete->getParametre('password');
-
-      //Sécurité
-      $identifiant = strip_tags($identifiant);
-      $password = strip_tags($password);
-
-      //Variable de session
-      $_SESSION['alert']=true;
-      $_SESSION['connexion']=false;
-
-      $utilisateur = $this->utilisateur->getUtilisateur($identifiant);
-
-      if (password_verify($password, $utilisateur['password'])) {
-        $_SESSION['connexion']=true;
-        $_SESSION['alert']=false;
-        header('Location: index.php?section=admin');
-        exit();
-      }
-      else {
-        header('Location: index.php?section=connexion');
-        exit();
-      }
+    if ($this->utilisateur->verifierUtilisateur($this->requete)) {
+      $_SESSION['connexion']=true;
+      $_SESSION['alert']=false;
+      $this->requete->redirection(array('section' => 'admin', ));
     }
     else {
-      header('Location: index.php?section=connexion');
-      exit();
+      $_SESSION['alert']=true;
+      $_SESSION['connexion']=false;
+      $this->requete->redirection(array('section' => 'connexion', ));
     }
   }
 }

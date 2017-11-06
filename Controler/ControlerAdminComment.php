@@ -6,7 +6,7 @@
  require_once 'Model/Commentaire.php';
  require_once 'Controler/Controleur.php';
 
-class ControlerAdmincomment extends Controleur
+class ControlerAdminComment extends Controleur
 {
   private $commentaire;
 

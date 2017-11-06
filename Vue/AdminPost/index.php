@@ -20,8 +20,8 @@
  <div class="row no-gutters justify-content-center">
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
     <h1 class="text-center my-5">Liste des Épisodes</h1>
-    <a class="btn btn-primary" href="index.php?section=adminedit&id=new">Ajouter un épisode</a>
-    <table class="table table-admin mb-5">
+    <a class="btn btn-primary" href="index.php?section=adminPostEdit&id=new">Ajouter un épisode</a>
+    <table class="table table-striped table-admin mb-5">
       <thead class="thead-inverse">
         <tr scope="row" class="">
           <th>#</th>
@@ -38,7 +38,7 @@
         ?>
         <tr scope="row">
           <th><?php echo $enter['id_episode']; ?></th>
-          <td><a href="index.php?section=adminedit&id=<?php echo $enter['id_episode']; ?>"><?php echo $enter['titre']; ?></a></td>
+          <td><a href="index.php?section=adminPostEdit&id=<?php echo $enter['id_episode']; ?>"><?php echo $enter['titre']; ?></a></td>
           <?php if ($enter['publication'] == false): ?>
             <td class="text-warning">Brouillon</td>
           <?php endif; ?>

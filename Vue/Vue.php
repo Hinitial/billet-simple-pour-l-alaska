@@ -26,9 +26,9 @@ class Vue
     $contenue = $this->generer($this->fichier, $donnee);
     //Génération de la page, en fonction du gabarit
     if ($this->affichage === 'front') {
-      $vue = $this->generer('Vue/gabarit-front.php', array('corp' => $contenue, 'titre' => $this->titre));
+      $vue = $this->generer('style/gabarit-front.php', array('corp' => $contenue, 'titre' => $this->titre));
     } elseif ($this->affichage === 'back') {
-      $vue = $this->generer('Vue/gabarit-back.php', array('corp' => $contenue, 'titre' => $this->titre));
+      $vue = $this->generer('style/gabarit-back.php', array('corp' => $contenue, 'titre' => $this->titre));
     } else {
       throw new Exception("Error : Variable " . $this->affichage . " incorrect", 1);
     }

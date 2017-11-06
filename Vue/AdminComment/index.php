@@ -51,7 +51,7 @@ $tableau_mois = array( '1' => 'Janvier',
           <?php endif; ?>
         <?php endif; ?>
         <td class="text-right text-secondary"><?php echo $enter['date_post']; ?></td>
-        <td class="text-center"><a href="index.php?section=adminCommentaireEdit&id=<?php echo $enter['id_commentaire']; ?>">Modérer</a> | <a href="index.php?section=adminCommentaireEdit&id=<?php echo $enter['id_commentaire']; ?>">Supprimez</a></td>
+        <td class="text-center"><a href="index.php?section=adminCommentaireEdit&id=<?php echo $enter['id_commentaire']; ?>">Modérer</a> | <a class="text-danger" href="index.php?section=adminCommentaireEdit&action=supprimer&id=<?php echo $enter['id_commentaire']; ?>">Supprimez</a></td>
       </tr>
       <?php endforeach;  //fin de boucle?>
     </tbody>

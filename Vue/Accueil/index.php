@@ -17,7 +17,7 @@
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="Vue/Photos/home.jpg" alt="Home">
+      <img class="d-block w-100" src="Photos/home.jpg" alt="Home">
       <div class="carousel-caption d-none d-md-block align-items-start ">
 
 
@@ -52,7 +52,7 @@
      ?>
        <div class="col-12 col-sm-6 py-3">
          <div class="card">
-           <div class="card-body bg-light">
+           <div class="card-body">
              <p class="card-text text-center">
                <?php if ($now <= $date_new && $now >= $date): //Nouvel episode?>
                  <span class="badge badge-danger mr-1">New</span>
@@ -65,7 +65,7 @@
              <h4 class="card-title text-center"><?php echo $enter['titre']; ?></h4>
              <p class="card-text"><?php echo strip_tags($enter['post']); ?>...</p>
              <p class="text-secondary"><?php echo $enter['jour'].' '.$tableau_mois[($enter['mois'])].' '.$enter['annee']; ?></p>
-             <a href="index.php?section=lecture&post=<?php echo $enter['id_episode']; ?>" class="btn btn-secondary">Aller a l'épisode</a>
+             <a href="index.php?section=lecture&id=<?php echo $enter['id_episode']; ?>" class="btn btn-secondary">Aller a l'épisode</a>
            </div>
          </div>
        </div>
@@ -81,7 +81,7 @@
    <h4 class="text-center mb-5">Jean Forteroche</h4>
    <div class="row justify-content-center">
      <div class="col-11 col-md-4 py-2">
-       <img class="img-fluid" src="Vue/Photos/ecriture.jpg" alt="auteur">
+       <img class="img-fluid" src="Photos/ecriture.jpg" alt="auteur">
      </div>
      <div class="col-11 col-md-6 py-2">
        <p class="text-justify">

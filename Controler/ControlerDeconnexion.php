@@ -22,10 +22,10 @@ class ControlerDeconnexion extends Controleur
   {
     session_destroy();
     if(isset($_SERVER['HTTP_REFERER'])){
-      header('Location: '.$_SERVER['HTTP_REFERER']);
+      $this->requete->redirection($_SERVER['HTTP_REFERER']);
     }
     else{
-      header('Location: index.php');
+      $this->requete->redirection(array());
     }
   }
 }

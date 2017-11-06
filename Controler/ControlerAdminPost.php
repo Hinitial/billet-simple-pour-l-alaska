@@ -6,7 +6,7 @@
  require_once 'Model/Episodes.php';
  require_once 'Controler/Controleur.php';
 
-class ControlerAdminpost extends Controleur
+class ControlerAdminPost extends Controleur
 {
   private $episode;
 

@@ -1,0 +1,4 @@
+AuthName "Page protégée"
+AuthType Basic
+AuthUserFile "/opt/lampp/htdocs/blogecrivain/admin/.htpasswd"
+Require valid-user

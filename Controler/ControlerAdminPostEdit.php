@@ -6,7 +6,7 @@
  require_once 'Model/Episodes.php';
  require_once 'Controler/Controleur.php';
 
-class ControlerAdminedit extends Controleur
+class ControlerAdminPostEdit extends Controleur
 {
   private $episode;
 
@@ -50,7 +50,6 @@ class ControlerAdminedit extends Controleur
     else {
       echo 'erreur';
     }
-
-    header('Location: index.php?section=adminpost');
+    $this->requete->redirection(array('section' => 'adminpost', ));
   }
 }

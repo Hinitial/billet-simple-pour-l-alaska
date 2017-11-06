@@ -30,24 +30,22 @@ class Routeur
     $controleur = 'Accueil';
     if ($requete->existeParametre('section')) {
       if ((isset($_SESSION['connexion']) !== true || $_SESSION['connexion'] !== true) && strpos(($requete->getParametre('section')),'admin') !== false) {
-        header('Location: index.php?section=connexion');
+        $requete->redirection(array('section' => 'connexion', ));
       }
       $controleur = $requete->getParametre('section');
       // Première lettre en majuscule
-      $controleur = ucfirst(strtolower($controleur));
+      $controleur = ucfirst($controleur);
     }
     // Création du nom du fichier du contrôleur
     $classeControleur = "Controler" . $controleur;
     $fichierControleur = "Controler/" . $classeControleur . ".php";
-    if (file_exists($fichierControleur)) {
-      // Instanciation du contrôleur adapté à la requête
-      require($fichierControleur);
-      $controleur = new $classeControleur();
-      $controleur->setRequete($requete);
-      return $controleur;
+    if (!file_exists($fichierControleur)) {
+      $this->redirection(array('section' => '404', ));
     }
-    else
-      throw new Exception("Fichier '$fichierControleur' introuvable");
+    require($fichierControleur);
+    $controleur = new $classeControleur();
+    $controleur->setRequete($requete);
+    return $controleur;
   }
 
   public function creerAction(Requete $requete)

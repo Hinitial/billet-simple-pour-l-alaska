@@ -20,7 +20,7 @@ $tableau_mois = array( '1' => 'Janvier',
 <div class="row no-gutters justify-content-center">
 <div class="col-12 col-md-10 col-lg-8 col-xl-6">
   <h1 class="text-center my-5">Modération</h1>
-  <form class="mb-5" action="index.html" method="post">
+  <form class="mb-5" action="index.php?section=adminCommentaireEdit&action=gestion&id=<?php echo $_GET['id']; ?>" method="post">
     <div class="row">
       <div class="form-group col-md-6">
         <label for="nom">Nom</label>

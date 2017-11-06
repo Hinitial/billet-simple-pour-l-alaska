@@ -14,6 +14,20 @@ class Utilisateur extends Modele
     $utilisateur = $utilisateur->fetch();
     return $utilisateur;
   }
+
+  public function verifierUtilisateur(Requete $requete)
+  {
+    $identifiant = $requete->getParametre('email');
+    $password = $requete->getParametre('password');
+
+    //Sécurité
+    $identifiant = strip_tags($identifiant);
+    $password = strip_tags($password);
+
+    $utilisateur = $this->getUtilisateur($identifiant);
+
+    return password_verify($password, $utilisateur['password']);
+  }
 }
 
  ?>

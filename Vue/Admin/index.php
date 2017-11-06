@@ -13,13 +13,13 @@
         </p>
       </div>
       <div class="col-6 col-sm-3">
-        <a href="#" class="btn btn-primary">Commencer à écrire</a>
+        <a href="index.php?section=adminPost" class="btn btn-primary">Commencer à écrire</a>
       </div>
     </div>
 
     <div class="d-flex flex-column-reverse flex-sm-row justify-content-center align-items-center my-5">
       <div class="col-6 col-sm-3">
-        <a href="#" class="btn btn-primary">Modérez votre site</a>
+        <a href="index.php?section=adminComment" class="btn btn-primary">Modérez votre site</a>
       </div>
       <div class="col-12 col-sm-9 text-center text-sm-right">
         <h4>Gérez votre communauté</h4>

@@ -28,6 +28,27 @@ class Requete
       throw new Exception("Paramètre '$nom' absent de la requête", 1);
     }
   }
+
+  public function redirection($argument)
+  {
+    $chaine = '';
+    if (is_array($argument)) {
+      $i = 0;
+      foreach ($argument as $key => $value) {
+        $chaine = $chaine . $key . '=' . $value;
+        if ((strlen($argument)-1) !== $i) {
+          $chaine = $chaine . '&';
+        }
+        $i = $i + 1;
+      }
+      $chaine = 'index.php?' . $chaine;
+    }
+    else {
+      $chaine = $argument;
+    }
+    header('Location: ' . $chaine);
+    exit;
+  }
 }
 
  ?>

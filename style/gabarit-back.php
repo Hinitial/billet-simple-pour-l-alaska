@@ -8,7 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="Vue/style-ends.css" >
+    <link rel="stylesheet" href="style/style-ends.css" >
+    <link rel="icon" type="image/png" href="Photos/icon.png" />
   </head>
   <body>
     <!-- nav -->
@@ -25,11 +26,11 @@
           <li class="nav-item <?php echo (($_GET['section']) === 'admin') ? 'active' : '' ;?>">
             <a class="nav-link" href="index.php?section=admin">Accueil </a>
           </li>
-          <li class="nav-item <?php echo (($_GET['section']) === 'adminpost') ? 'active' : '' ;?>">
-            <a class="nav-link" href="index.php?section=adminpost">Épisodes</a>
+          <li class="nav-item <?php echo (($_GET['section']) === 'adminPost') ? 'active' : '' ;?>">
+            <a class="nav-link" href="index.php?section=adminPost">Épisodes</a>
           </li>
-          <li class="nav-item <?php echo (($_GET['section']) === 'admincomment') ? 'active' : '' ;?>">
-            <a class="nav-link" href="index.php?section=admincomment">Commentaires</a>
+          <li class="nav-item <?php echo (($_GET['section']) === 'adminComment') ? 'active' : '' ;?>">
+            <a class="nav-link" href="index.php?section=adminComment">Commentaires</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

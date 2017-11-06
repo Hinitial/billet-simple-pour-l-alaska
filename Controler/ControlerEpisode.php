@@ -18,6 +18,6 @@ class ControlerEpisode extends Controleur
   public function index()
   {
     $episodes = $this->episode->getEpisodesExtrait(300);
-    /**/$this->genererVue(array('episodes' => $episodes), 'front');
+    $this->genererVue(array('episodes' => $episodes), 'front');
   }
 }
