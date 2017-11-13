@@ -1,5 +1,4 @@
 <?php
-//namespace BilletSimpleAlaska;
 /**
  *
  */
@@ -25,6 +24,7 @@ class Routeur
 
   }
 
+  // Creer un Objet Controleur adapté à la requete
   public function creerControleur(Requete $requete)
   {
     $controleur = 'Accueil';
@@ -40,7 +40,7 @@ class Routeur
     $classeControleur = "Controler" . $controleur;
     $fichierControleur = "Controler/" . $classeControleur . ".php";
     if (!file_exists($fichierControleur)) {
-      $this->redirection(array('section' => '404', ));
+      $requete->redirection(array('section' => '404', ));
     }
     require($fichierControleur);
     $controleur = new $classeControleur();
@@ -48,6 +48,7 @@ class Routeur
     return $controleur;
   }
 
+  // Renvoie l'action de la requete, index par defaut
   public function creerAction(Requete $requete)
   {
     $action = "index";

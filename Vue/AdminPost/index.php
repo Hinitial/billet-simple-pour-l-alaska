@@ -20,9 +20,9 @@
  <div class="row no-gutters justify-content-center">
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
     <h1 class="text-center my-5">Liste des Épisodes</h1>
-    <a class="btn btn-primary" href="index.php?section=adminPostEdit&id=new">Ajouter un épisode</a>
-    <table class="table table-striped table-admin mb-5">
-      <thead class="thead-inverse">
+    <p class="text-center"><a class=" btn btn-primary" href="index.php?section=adminPostEdit&id=new">Ajouter un épisode</a></p>
+    <table class="table table-admin mb-5">
+      <thead>
         <tr scope="row" class="">
           <th>#</th>
           <th>Titre</th>

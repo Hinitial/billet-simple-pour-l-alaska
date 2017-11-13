@@ -1,5 +1,4 @@
 <?php
-//namespace BilletSimpleAlaska;
 /**
  *
  */
@@ -10,11 +9,13 @@ class ControlerAccueil extends Controleur
 {
   private $episode;
 
+  // Constructeur
   public function __construct()
   {
     $this->episode = new Episodes();
   }
 
+  // Fonction d'affichage, par defaut.
   public function index()
   {
     $episodes = $this->episode->getEpisodesAccueil();

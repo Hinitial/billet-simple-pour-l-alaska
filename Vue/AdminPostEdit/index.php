@@ -18,6 +18,7 @@
 <script src="tinymce/js/tinymce/tinymce.min.js"></script>
 <script src="tinymce/js/tinymce/jquery.tinymce.min.js"></script>
 <script>tinymce.init({ selector:'textarea' });</script>
+
 <div class="row no-gutters justify-content-center">
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
     <h1 class="text-center my-5">Édition</h1>

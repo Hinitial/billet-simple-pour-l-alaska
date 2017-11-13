@@ -32,7 +32,7 @@ $tableau_mois = array( '1' => 'Janvier',
       </div>
       <div class="form-group col-md-2">
         <label for="signalement">Signalement</label>
-        <input type="text" class="form-control" id="signalement" value="<?php echo $commentaires['signalement']; ?>" readonly>
+        <input type="text" class="form-control" name="signalement" id="signalement" value="<?php echo $commentaires['signalement']; ?>">
       </div>
     </div>
     <div class="form-group">

@@ -20,8 +20,8 @@ $tableau_mois = array( '1' => 'Janvier',
 <div class="row no-gutters justify-content-center">
 <div class="col-12 col-md-10 col-lg-8 col-xl-6">
   <h1 class="text-center my-5">Commentaire</h1>
-  <table class="table table-striped mb-5">
-    <thead class="thead-inverse">
+  <table class="table table-admin mb-5">
+    <thead>
       <tr scope="row" class="">
         <th>Id</th>
         <th>Utilisateur</th>

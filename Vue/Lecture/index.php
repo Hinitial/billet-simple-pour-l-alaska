@@ -2,7 +2,7 @@
 
 <div class="row no-gutters justify-content-center">
  <div class="col-11 col-md-10 col-lg-8 col-xl-6 py-5">
-   <article class="">
+   <article class="lecture">
      <h1 class="text-center mb-5"><?php echo $episodes['titre']; ?></h1>
      <?php echo $episodes['post']; ?>
    </article>
@@ -30,7 +30,7 @@
        foreach ($commentaires as $enter):
      ?>
        <article class="border border-bottom-0 border-left-0 border-right-0 border-secondary py-4">
-         <p><?php echo $enter['nom']; ?></p>
+         <p class="font-weight-bold"><?php echo $enter['nom']; ?></p>
          <p><?php echo preg_replace('#(@[a-zA-Z0-9]{1,30})#', '<mark class="text-info p-1">$1</mark>', $enter['post']); ?></p>
          <p class="text-secondary"><?php echo $enter['date_post']; ?></p>
          <form class="" action="index.php?section=lecture&action=signalement&id=<?php echo $_GET['id']; ?>" method="post">

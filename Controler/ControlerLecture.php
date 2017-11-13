@@ -1,5 +1,4 @@
 <?php
-//namespace BilletSimpleAlaska;
 /**
  *
  */
@@ -12,12 +11,14 @@ class ControlerLecture extends Controleur
   private $episode;
   private $commentaire;
 
+  // Constructeur
   public function __construct()
   {
     $this->episode = new Episodes();
     $this->commentaire = new Commentaire();
   }
 
+  // Fonction d'affichage, par defaut.
   public function index()
   {
     $idEpisode = $this->requete->getParametre('id');
@@ -26,6 +27,7 @@ class ControlerLecture extends Controleur
     $this->genererVue(array('episodes' => $episodes, 'commentaires' => $commentaires), 'front');
   }
 
+  // Laisse un commentare
   public function commenter()
   {
     $nom = $this->requete->getParametre('nom');
@@ -35,6 +37,7 @@ class ControlerLecture extends Controleur
     $this->requete->redirection(array('section' => 'lecture', 'id' => $id_episode,));
   }
 
+  // Signaler un commentaire
   public function signalement()
   {
     $id_episode = $this->requete->getParametre('id');

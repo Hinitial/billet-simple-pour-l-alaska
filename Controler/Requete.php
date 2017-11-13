@@ -1,5 +1,4 @@
 <?php
-//namespace BilletSimpleAlaska;
 /**
  *
  */
@@ -29,6 +28,7 @@ class Requete
     }
   }
 
+  // Redirige vers une page
   public function redirection($argument)
   {
     $chaine = '';

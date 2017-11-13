@@ -1,5 +1,4 @@
 <?php
-//namespace BilletSimpleAlaska;
 /**
  *
  */
@@ -12,12 +11,14 @@ class ControlerDeconnexion extends Controleur
   private $episode;
   private $commentaire;
 
+  // Constructeur
   public function __construct()
   {
     $this->episode = new Episodes();
     $this->commentaire = new Commentaire();
   }
 
+  // Fonction d'affichage, par defaut.
   public function index()
   {
     session_destroy();

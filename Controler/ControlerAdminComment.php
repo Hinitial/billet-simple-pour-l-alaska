@@ -1,5 +1,4 @@
 <?php
-//namespace BilletSimpleAlaska;
 /**
  *
  */
@@ -10,11 +9,13 @@ class ControlerAdminComment extends Controleur
 {
   private $commentaire;
 
+  // Constructeur
   public function __construct()
   {
     $this->commentaire = new Commentaire();
   }
 
+  // Fonction d'affichage, par defaut.
   public function index()
   {
     $commentaires = $this->commentaire->getCommentaire();

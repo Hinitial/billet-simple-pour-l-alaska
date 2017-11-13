@@ -1,5 +1,4 @@
 <?php
-//namespace BilletSimpleAlaska;
 /**
  *
  */
@@ -7,7 +6,7 @@ require_once 'Model/Modele.php';
 
 class Episodes extends Modele
 {
-  //Renvoie les épisodes
+  //Renvoie les épisodes, paramétrable
   public function getEpisodes($id_rechercher = null, $offset = null, $limit = null)
   {
     $episode;
@@ -73,7 +72,7 @@ class Episodes extends Modele
 
   // ----- Fonction Modicfiction BDD -----
 
-  //Insertion d'une entré
+  //Insertion d'un épsiode
   public function insertBdd($titre, $post, $publication, $date_post)
   {
     $tab = array(
@@ -86,7 +85,7 @@ class Episodes extends Modele
     $episode = $this->executeRequete($sql, $tab);
   }
 
-  //Mets à jour une entré
+  //Mets à jour d'un épsiode
   public function updateBDD($id, $titre, $post, $publication, $date_post)
   {
     $tab = array(
@@ -100,7 +99,7 @@ class Episodes extends Modele
     $episode = $this->executeRequete($sql, $tab);
   }
 
-  //Supprime une entré
+  //Supprime d'un épsiode
   public function deleteBDD($id)
   {
     $tab = array('id' => $id);

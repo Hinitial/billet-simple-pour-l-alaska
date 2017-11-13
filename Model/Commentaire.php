@@ -1,5 +1,4 @@
 <?php
-//namespace BilletSimpleAlaska;
 /**
  *
  */
@@ -36,7 +35,7 @@ class Commentaire extends Modele
       $sql = 'SELECT id_commentaire, nom, post, date_post, signalement, id_episode FROM alk_commentaire WHERE id_episode = :id_article ORDER BY date_post LIMIT :_offset, :_limit';
       $commentaire = $this->executeRequete($sql, array('id_article' => ((int)$id_article), '_offset' => ((int)$offset), '_limit' => ((int)$limit) ));
     } else {
-      $sql = 'SELECT id_commentaire, nom, post, DATE_FORMAT(date_post, "%d/%m %Hh%imin") AS date_post, signalement, id_episode FROM alk_commentaire WHERE id_episode = :id_article ORDER BY date_post';
+      $sql = 'SELECT id_commentaire, nom, post, date_post, signalement, id_episode FROM alk_commentaire WHERE id_episode = :id_article ORDER BY date_post';
       $commentaire = $this->executeRequete($sql, array('id_article' => ((int)$id_article) ));
     }
     return $commentaire;
@@ -56,18 +55,19 @@ class Commentaire extends Modele
     $commentaire = $this->executeRequete($sql, $tab);
   }
 
-  //Mets à jour une entré
-  public function updateBDD($id, $post)
+  //Mets à jour un commentaire
+  public function updateBDD($id, $post, $signalement)
   {
     $tab = array(
         'id' => $id,
-        'post' => $post);
+        'post' => $post,
+        'signalement' => $signalement);
 
-    $sql = 'UPDATE alk_commentaire SET post = :post WHERE id_commentaire = :id';
+    $sql = 'UPDATE alk_commentaire SET post = :post, signalement = :signalement WHERE id_commentaire = :id';
     $commentaire = $this->executeRequete($sql, $tab);
   }
 
-  //Mets à jour une entré
+  //Mets à jour un commentaire
   public function signalementBDD($id)
   {
     $tab = array(
@@ -77,7 +77,7 @@ class Commentaire extends Modele
     $commentaire = $this->executeRequete($sql, $tab);
   }
 
-  //Supprime une entré
+  //Supprime un commentaire
   public function deleteBDD($id)
   {
     $tab = array('id' => $id);

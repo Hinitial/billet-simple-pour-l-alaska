@@ -1,5 +1,4 @@
 <?php
-//namespace BilletSimpleAlaska;
 /**
  *
  */
@@ -20,6 +19,7 @@ class Vue
     $this->affichage = $affichage;
   }
 
+  // Afficher la vue demmandé
   public function afficher($donnee)
   {
     //Génération des élements nécésitant une BDD
@@ -36,6 +36,7 @@ class Vue
     echo $vue;
   }
 
+  // Générer des donnée à afficher
   private function generer($fichier, $donnees)
   {
     if (file_exists($fichier)) {
