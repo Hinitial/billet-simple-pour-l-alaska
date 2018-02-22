@@ -1,9 +1,10 @@
 <?php
-//namespace BilletSimpleAlaska;
+namespace BlogEcrivain\Model;
+use \BlogEcrivain\Controler\Requete;
 /**
  *
  */
-require_once 'Model/Modele.php';
+//require_once 'Model/Modele.php';
 
 class Utilisateur extends Modele
 {

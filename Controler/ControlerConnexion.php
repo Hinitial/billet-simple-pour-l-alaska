@@ -1,9 +1,8 @@
 <?php
+namespace BlogEcrivain\Controler;
 /**
  *
  */
- require_once 'Model/Utilisateur.php';
- require_once 'Controler/Controleur.php';
 
 class ControlerConnexion extends Controleur
 {
@@ -12,7 +11,7 @@ class ControlerConnexion extends Controleur
   // Constructeur
   public function __construct()
   {
-    $this->utilisateur = new Utilisateur();
+    $this->utilisateur = new \BlogEcrivain\Model\Utilisateur();
   }
 
   // Fonction d'affichage, par defaut.

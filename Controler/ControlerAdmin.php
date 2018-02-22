@@ -1,8 +1,8 @@
 <?php
+namespace BlogEcrivain\Controler;
 /**
  *
  */
- require_once 'Controler/Controleur.php';
 
 class ControlerAdmin extends Controleur
 {

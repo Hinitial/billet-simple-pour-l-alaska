@@ -1,9 +1,8 @@
 <?php
+namespace BlogEcrivain\Controler;
 /**
  *
  */
- require_once 'Model/Commentaire.php';
- require_once 'Controler/Controleur.php';
 
 class ControlerAdminCommentaireEdit extends Controleur
 {
@@ -12,7 +11,7 @@ class ControlerAdminCommentaireEdit extends Controleur
   // Constructeur
   public function __construct()
   {
-    $this->commentaire = new Commentaire();
+    $this->commentaire = new \BlogEcrivain\Model\Commentaire();
   }
 
   // Fonction d'affichage, par defaut.
@@ -20,6 +19,9 @@ class ControlerAdminCommentaireEdit extends Controleur
   {
     $id_commentaire = $this->requete->getParametre('id');
     $commentaires = $this->commentaire->getCommentaire($id_commentaire);
+    if($commentaires === false){
+      $this->pageIntrouvable();
+    }
     $this->genererVue(array('commentaires' => $commentaires), 'back');
   }
 

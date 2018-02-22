@@ -1,9 +1,9 @@
 <?php
+namespace BlogEcrivain\Controler;
+use \DateTime;
 /**
  *
  */
- require_once 'Model/Episodes.php';
- require_once 'Controler/Controleur.php';
 
 class ControlerAdminPostEdit extends Controleur
 {
@@ -12,7 +12,7 @@ class ControlerAdminPostEdit extends Controleur
   // Constructeur
   public function __construct()
   {
-    $this->episode = new Episodes();
+    $this->episode = new \BlogEcrivain\Model\Episodes();
   }
 
   // Fonction d'affichage, par defaut.
@@ -20,6 +20,9 @@ class ControlerAdminPostEdit extends Controleur
   {
     $idEpisode = $this->requete->getParametre('id');
     $episodes = $this->episode->getEpisodes($idEpisode);
+    if($episodes === false){
+      $this->pageIntrouvable();
+    }
     $this->genererVue(array('episodes' => $episodes), 'back');
   }
 

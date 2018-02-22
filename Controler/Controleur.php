@@ -1,9 +1,8 @@
 <?php
+namespace BlogEcrivain\Controler;
 /**
  *
  */
- require_once 'Controler/Requete.php';
- require_once 'Vue/Vue.php';
 
 abstract class Controleur {
 
@@ -37,9 +36,13 @@ abstract class Controleur {
   protected function genererVue($donneesVue = array(), $affichage) {
     // Détermination du nom du fichier vue à partir du nom du contrôleur actuel
     $classeControleur = get_class($this);
-    $controleur = str_replace("Controler", "", $classeControleur);
+    $controleur = str_replace("BlogEcrivain\\Controler\\Controler", "", $classeControleur);
     // Instanciation et génération de la vue
-    $vue = new Vue($affichage, $this->action, $controleur);
+    $vue = new \BlogEcrivain\Vue\Vue($affichage, $this->action, $controleur);
     $vue->afficher($donneesVue);
+  }
+
+  protected function pageIntrouvable(){
+    $this->requete->redirection(array('section' => '404'));
   }
 }

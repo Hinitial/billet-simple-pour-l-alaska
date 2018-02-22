@@ -1,9 +1,8 @@
 <?php
+namespace BlogEcrivain\Controler;
 /**
  *
  */
-require_once 'Controler/Requete.php';
-require_once 'Vue/Vue.php';
 
 class Routeur
 {
@@ -39,11 +38,12 @@ class Routeur
     // Création du nom du fichier du contrôleur
     $classeControleur = "Controler" . $controleur;
     $fichierControleur = "Controler/" . $classeControleur . ".php";
+    $namespceControleur = "BlogEcrivain\\Controler\\" . $classeControleur;
     if (!file_exists($fichierControleur)) {
       $requete->redirection(array('section' => '404', ));
     }
-    require($fichierControleur);
-    $controleur = new $classeControleur();
+    //require($fichierControleur);
+    $controleur = new $namespceControleur();
     $controleur->setRequete($requete);
     return $controleur;
   }
@@ -61,7 +61,7 @@ class Routeur
   // Gère une erreur d'exécution (exception)
   private function gererErreur(Exception $exception)
   {
-    $vue = new Vue('erreur', '');
+    $vue = new \BlogEcrivain\Vue\Vue('erreur', '');
     //$vue->afficher(array('msgErreur' => $exception->getMessage()));
     echo $exception->getMessage();
   }

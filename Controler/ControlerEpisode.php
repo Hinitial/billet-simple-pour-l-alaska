@@ -1,9 +1,8 @@
 <?php
+namespace BlogEcrivain\Controler;
 /**
  *
  */
- require_once 'Model/Episodes.php';
- require_once 'Controler/Controleur.php';
 
 class ControlerEpisode extends Controleur
 {
@@ -12,7 +11,7 @@ class ControlerEpisode extends Controleur
   // Constructeur
   public function __construct()
   {
-    $this->episode = new Episodes();
+    $this->episode = new \BlogEcrivain\Model\Episodes();
   }
 
   // Fonction d'affichage, par defaut.

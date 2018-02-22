@@ -1,9 +1,8 @@
 <?php
+namespace BlogEcrivain\Controler;
 /**
  *
  */
- require_once 'Model/Commentaire.php';
- require_once 'Controler/Controleur.php';
 
 class ControlerAdminComment extends Controleur
 {
@@ -12,7 +11,7 @@ class ControlerAdminComment extends Controleur
   // Constructeur
   public function __construct()
   {
-    $this->commentaire = new Commentaire();
+    $this->commentaire = new \BlogEcrivain\Model\Commentaire();
   }
 
   // Fonction d'affichage, par defaut.

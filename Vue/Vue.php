@@ -1,4 +1,6 @@
 <?php
+namespace BlogEcrivain\Vue;
+use \Exception;
 /**
  *
  */

@@ -1,10 +1,8 @@
 <?php
+namespace BlogEcrivain\Controler;
 /**
  *
  */
- require_once 'Model/Episodes.php';
- require_once 'Model/Commentaire.php';
- require_once 'Controler/Controleur.php';
 
 class ControlerLecture extends Controleur
 {
@@ -14,8 +12,8 @@ class ControlerLecture extends Controleur
   // Constructeur
   public function __construct()
   {
-    $this->episode = new Episodes();
-    $this->commentaire = new Commentaire();
+    $this->episode = new \BlogEcrivain\Model\Episodes();
+    $this->commentaire = new \BlogEcrivain\Model\Commentaire();
   }
 
   // Fonction d'affichage, par defaut.
@@ -23,6 +21,12 @@ class ControlerLecture extends Controleur
   {
     $idEpisode = $this->requete->getParametre('id');
     $episodes = $this->episode->getEpisodes($idEpisode);
+    if($episodes === false){
+      $this->pageIntrouvable();
+    }
+    if($episodes[publication] == 0){
+      $this->pageIntrouvable();
+    }
     $commentaires = $this->commentaire->getCommentaireArticle($idEpisode);
     $this->genererVue(array('episodes' => $episodes, 'commentaires' => $commentaires), 'front');
   }

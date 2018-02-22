@@ -1,10 +1,8 @@
 <?php
+namespace BlogEcrivain\Controler;
 /**
  *
  */
- require_once 'Model/Episodes.php';
- require_once 'Model/Commentaire.php';
- require_once 'Controler/Controleur.php';
 
 class ControlerDeconnexion extends Controleur
 {
@@ -14,8 +12,8 @@ class ControlerDeconnexion extends Controleur
   // Constructeur
   public function __construct()
   {
-    $this->episode = new Episodes();
-    $this->commentaire = new Commentaire();
+    $this->episode = new \BlogEcrivain\Model\Episodes();
+    $this->commentaire = new \BlogEcrivain\Model\Commentaire();
   }
 
   // Fonction d'affichage, par defaut.

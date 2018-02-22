@@ -29,7 +29,7 @@
         <p class="text-justify">
           Nullam interdum rutrum ultrices. Phasellus fermentum, lorem eget pharetra dapibus, orci ligula consectetur massa, et volutpat dui quam non sem. Praesent non arcu eget sapien fermentum laoreet non quis libero. Nunc egestas est ac tempor fringilla. Ut erat nisl, accumsan non justo vitae, facilisis rhoncus massa. Sed eget commodo ex, a dapibus dui. Morbi quis massa non lacus tempor molestie sed vel sem. Etiam diam ipsum, rutrum a sapien ut, faucibus gravida diam. In et tristique odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis pharetra metus, at ultricies neque consectetur vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
-        <a href="episodes.html" class="btn btn-primary">Commencer la lecture</a>
+        <a href="index.php?section=lecture&id=1" class="btn btn-primary">Commencez la lecture</a>
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@
              <h4 class="card-title text-center"><?php echo $enter['titre']; ?></h4>
              <p class="card-text"><?php echo strip_tags($enter['post']); ?>...</p>
              <p class="text-secondary"><?php echo $enter['jour'].' '.$tableau_mois[($enter['mois'])].' '.$enter['annee']; ?></p>
-             <a href="index.php?section=lecture&id=<?php echo $enter['id_episode']; ?>" class="btn btn-secondary">Aller a l'épisode</a>
+             <a href="index.php?section=lecture&id=<?php echo $enter['id_episode']; ?>" class="btn btn-secondary">Allez à l'épisode</a>
            </div>
          </div>
        </div>
