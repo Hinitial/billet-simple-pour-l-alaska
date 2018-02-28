@@ -1,5 +1,7 @@
 <?php
 namespace BlogEcrivain\Controler;
+use \DateTime;
+
 /**
  *
  */
@@ -21,7 +23,9 @@ class ControlerLecture extends Controleur
   {
     $idEpisode = $this->requete->getParametre('id');
     $episodes = $this->episode->getEpisodes($idEpisode);
-    if($episodes === false){
+    $datePubliction = new DateTime($episodes[date_post]);
+    $dateActuele = new DateTime();
+    if($episodes === false || $datePubliction > $dateActuele){
       $this->pageIntrouvable();
     }
     if($episodes[publication] == 0){

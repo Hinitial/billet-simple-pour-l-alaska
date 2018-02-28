@@ -3,7 +3,6 @@ namespace BlogEcrivain\Model;
 /**
  *
  */
-//require_once 'Model/Modele.php';
 
 class Episodes extends Modele
 {

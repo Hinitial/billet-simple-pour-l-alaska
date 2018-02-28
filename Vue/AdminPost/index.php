@@ -19,7 +19,7 @@
 <!-- corp texte -->
  <div class="row no-gutters justify-content-center">
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
-    <h1 class="text-center my-5">Liste des Épisodes</h1>
+    <h1 class="text-center my-5">Liste des épisodes</h1>
     <p class="text-center"><a class=" btn btn-primary" href="index.php?section=adminPostEdit&id=new">Ajouter un épisode</a></p>
     <table class="table table-admin mb-5">
       <thead>

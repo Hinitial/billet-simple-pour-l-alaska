@@ -41,7 +41,7 @@ $tableau_mois = array( '1' => 'Janvier',
     </div>
     <div class="row">
       <div class="form-group">
-        <button type="submit" class="btn btn-warning mr-2" id="brouillon" name="brouillon">Enregistrer les Modifications</button>
+        <button type="submit" class="btn btn-warning mr-2" id="brouillon" name="brouillon">Enregistrer les modifications</button>
         <button type="submit" class="btn btn-danger " id="supprimer" name="supprimer">Supprimer</button>
       </div>
     </div>

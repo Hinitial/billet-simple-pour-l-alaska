@@ -29,7 +29,7 @@
         <p class="text-justify">
           Nullam interdum rutrum ultrices. Phasellus fermentum, lorem eget pharetra dapibus, orci ligula consectetur massa, et volutpat dui quam non sem. Praesent non arcu eget sapien fermentum laoreet non quis libero. Nunc egestas est ac tempor fringilla. Ut erat nisl, accumsan non justo vitae, facilisis rhoncus massa. Sed eget commodo ex, a dapibus dui. Morbi quis massa non lacus tempor molestie sed vel sem. Etiam diam ipsum, rutrum a sapien ut, faucibus gravida diam. In et tristique odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce convallis pharetra metus, at ultricies neque consectetur vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
-        <a href="index.php?section=lecture&id=1" class="btn btn-primary">Commencez la lecture</a>
+        <a href="index.php?section=lecture&id=1" class="btn btn-primary">Commencer la lecture</a>
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@
 
 <div class="row no-gutters justify-content-center">
  <div class="col-12 col-md-10 col-lg-8 col-xl-6 py-5">
-   <h4 class="text-center">Derniers épisodes</h4>
+   <h4 class="text-center">Les derniers épisodes</h4>
    <div class="row">
 
      <?php
@@ -55,17 +55,19 @@
            <div class="card-body">
              <p class="card-text text-center">
                <?php if ($now <= $date_new && $now >= $date): //Nouvel episode?>
-                 <span class="badge badge-danger mr-1">New</span>
+                 <span class="badge badge-danger mr-1">Nouveau</span>
                <?php endif; ?>
 
                <?php if ($now < $date): //Prochain episode?>
-                 <span class="badge badge-primary mr-1">Coming soon</span>
+                 <span class="badge badge-primary mr-1">Prochainement</span>
                <?php endif; ?>
              </p>
              <h4 class="card-title text-center"><?php echo $enter['titre']; ?></h4>
              <p class="card-text"><?php echo strip_tags($enter['post']); ?>...</p>
              <p class="text-secondary"><?php echo $enter['jour'].' '.$tableau_mois[($enter['mois'])].' '.$enter['annee']; ?></p>
-             <a href="index.php?section=lecture&id=<?php echo $enter['id_episode']; ?>" class="btn btn-secondary">Allez à l'épisode</a>
+             <?php if (!($now < $date)): //Prochain episode?>
+               <a href="index.php?section=lecture&id=<?php echo $enter['id_episode']; ?>" class="btn btn-secondary">Aller à l'épisode</a>
+             <?php endif; ?>
            </div>
          </div>
        </div>

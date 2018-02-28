@@ -20,7 +20,7 @@ class ControlerAdminPostEdit extends Controleur
   {
     $idEpisode = $this->requete->getParametre('id');
     $episodes = $this->episode->getEpisodes($idEpisode);
-    if($episodes === false){
+    if($episodes === false && $idEpisode != "new"){
       $this->pageIntrouvable();
     }
     $this->genererVue(array('episodes' => $episodes), 'back');
@@ -57,6 +57,6 @@ class ControlerAdminPostEdit extends Controleur
     else {
       echo 'erreur';
     }
-    $this->requete->redirection(array('section' => 'adminpost', ));
+    $this->requete->redirection(array('section' => 'adminPost', ));
   }
 }

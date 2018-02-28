@@ -4,7 +4,6 @@ use \BlogEcrivain\Controler\Requete;
 /**
  *
  */
-//require_once 'Model/Modele.php';
 
 class Utilisateur extends Modele
 {

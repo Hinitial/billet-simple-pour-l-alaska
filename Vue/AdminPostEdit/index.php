@@ -22,7 +22,7 @@
 <div class="row no-gutters justify-content-center">
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
     <h1 class="text-center my-5">Édition</h1>
-    <form class="mb-5" action="index.php?section=adminedit&action=gestion&db=<?php if($_GET['id'] == 'new'){echo 'insert';}else{echo 'update&id='.$_GET['id'];}?>" method="post">
+    <form class="mb-5" action="index.php?section=adminPostEdit&action=gestion&db=<?php if($_GET['id'] == 'new'){echo 'insert';}else{echo 'update&id='.$_GET['id'];}?>" method="post">
       <div class="form-group">
         <label for="titre">Titre de l'épisode</label>
         <input type="text" class="form-control" name="titre" id="titre" value="<?php if($_GET['id'] !== 'new'){echo $episodes['titre'];}else{echo 'Votre titre';}?>">

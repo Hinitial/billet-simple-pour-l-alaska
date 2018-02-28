@@ -37,16 +37,22 @@
           <div class="col-10 border border-bottom-0 border-left-0 border-right-0 border-secondary py-4">
             <h4 class="col-12">
               <?php if ($now <= $date_new && $now >= $date): //Nouvel episode?>
-                <span class="badge badge-danger mr-1">New</span>
+                <span class="badge badge-danger mr-1">Nouveau</span>
               <?php endif; ?>
 
               <?php if ($now < $date): //Prochain episode?>
-                <span class="badge badge-primary mr-1">Coming soon</span>
+                <span class="badge badge-primary mr-1">Prochainement</span>
               <?php endif; ?>
 
-              <a href="index.php?section=lecture&id=<?php echo $enter['id_episode']; ?>" >
-                <?php echo $enter['titre']; ?>
-              </a>
+              <?php if (!($now < $date)):?>
+                <a href="index.php?section=lecture&id=<?php echo $enter['id_episode']; ?>" >
+                  <?php echo $enter['titre']; ?>
+                </a>
+              <?php else: ?>
+                <span><?php echo $enter['titre']; ?></span>
+              <?php endif; ?>
+
+
             </h4>
             <p class="col-12"><?php echo strip_tags($enter['post']); ?>...</p>
             <p class="col-12 text-right text-secondary">
